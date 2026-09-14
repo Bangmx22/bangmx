@@ -1,0 +1,13 @@
+name: Deploy Pages
+on:
+  push:
+    branches: [main]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: mkdir -p docs && cp index.html docs/
+      - run: git config user.name "Bangmx" && git config user.email "mbahmxx22@gmail.com"
+      - run: git add docs/ && git commit -m "docs" || true
+      - run: git push origin gh-pages 2>/dev/null || true
