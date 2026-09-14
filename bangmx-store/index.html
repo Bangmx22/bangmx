@@ -407,17 +407,17 @@
                         <label class="block text-sm font-semibold text-gray-300 mb-3">🎮 Pilih Game</label>
                         <div class="grid grid-cols-1 sm:grid-cols-3 gap-3" id="game-select">
                             <button class="game-btn glass-cyan rounded-xl p-4 text-left hover:border-cyan/50 transition-all" data-game="mobile-legends" data-price-base="50000">
-                                <div class="text-2xl mb-2">⚔️</div>
+                                <img src="assets/img/ml-icon.png" alt="ML" class="w-10 h-10 mx-auto mb-2 rounded-lg">
                                 <div class="font-bold text-sm">Mobile Legends</div>
                                 <div class="text-xs text-gray-400">Rank Boost & Paket</div>
                             </button>
                             <button class="game-btn glass rounded-xl p-4 text-left hover:border-cyan/50 transition-all" data-game="valorant" data-price-base="75000">
-                                <div class="text-2xl mb-2">🎯</div>
+                                <img src="assets/img/valorant-icon.png" alt="VAL" class="w-10 h-10 mx-auto mb-2 rounded-lg">
                                 <div class="font-bold text-sm">Valorant</div>
                                 <div class="text-xs text-gray-400">Rank Up & Agent</div>
                             </button>
                             <button class="game-btn glass rounded-xl p-4 text-left hover:border-cyan/50 transition-all" data-game="pubg" data-price-base="60000">
-                                <div class="text-2xl mb-2">🔫</div>
+                                <img src="assets/img/pubg-icon.png" alt="PUBG" class="w-10 h-10 mx-auto mb-2 rounded-lg">
                                 <div class="font-bold text-sm">PUBG Mobile</div>
                                 <div class="text-xs text-gray-400">UC & Rank Boost</div>
                             </button>
@@ -485,37 +485,37 @@
 
             <!-- Game Tabs -->
             <div class="flex justify-center gap-3 mb-8 flex-wrap">
-                <button class="topup-tab glass-cyan px-5 py-2.5 rounded-xl text-sm font-bold text-cyan border border-cyan/30" data-tab="ml" onclick="switchTopupTab('ml')">⚔️ Mobile Legends</button>
-                <button class="topup-tab glass px-5 py-2.5 rounded-xl text-sm font-bold text-gray-400 hover:text-white transition-colors" data-tab="pubg" onclick="switchTopupTab('pubg')">🔫 PUBG Mobile</button>
-                <button class="topup-tab glass px-5 py-2.5 rounded-xl text-sm font-bold text-gray-400 hover:text-white transition-colors" data-tab="ff" onclick="switchTopupTab('ff')">🔥 Free Fire</button>
-                <button class="topup-tab glass px-5 py-2.5 rounded-xl text-sm font-bold text-gray-400 hover:text-white transition-colors" data-tab="valorant" onclick="switchTopupTab('valorant')">🎯 Valorant</button>
-                <button class="topup-tab glass px-5 py-2.5 rounded-xl text-sm font-bold text-gray-400 hover:text-white transition-colors" data-tab="genshin" onclick="switchTopupTab('genshin')">⭐ Genshin Impact</button>
+                <button class="topup-tab glass-cyan px-5 py-2.5 rounded-xl text-sm font-bold text-cyan border border-cyan/30" data-tab="ml" onclick="switchTopupTab('ml')"><img src="assets/img/ml-icon.png" alt="ML" class="w-5 h-5 inline rounded"> Mobile Legends</button>
+                <button class="topup-tab glass px-5 py-2.5 rounded-xl text-sm font-bold text-gray-400 hover:text-white transition-colors" data-tab="pubg" onclick="switchTopupTab('pubg')"><img src="assets/img/pubg-icon.png" alt="PUBG" class="w-5 h-5 inline rounded"> PUBG Mobile</button>
+                <button class="topup-tab glass px-5 py-2.5 rounded-xl text-sm font-bold text-gray-400 hover:text-white transition-colors" data-tab="ff" onclick="switchTopupTab('ff')"><img src="assets/img/ff-icon.png" alt="FF" class="w-5 h-5 inline rounded"> Free Fire</button>
+                <button class="topup-tab glass px-5 py-2.5 rounded-xl text-sm font-bold text-gray-400 hover:text-white transition-colors" data-tab="valorant" onclick="switchTopupTab('valorant')"><img src="assets/img/valorant-icon.png" alt="VAL" class="w-5 h-5 inline rounded"> Valorant</button>
+                <button class="topup-tab glass px-5 py-2.5 rounded-xl text-sm font-bold text-gray-400 hover:text-white transition-colors" data-tab="genshin" onclick="switchTopupTab('genshin')"><img src="assets/img/genshin-icon.png" alt="GI" class="w-5 h-5 inline rounded"> Genshin Impact</button>
             </div>
 
             <!-- Product Grid - Mobile Legends -->
             <div id="topup-grid-ml" class="topup-grid grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
                 <div class="topup-card glass rounded-2xl p-4 text-center cursor-pointer hover:border-cyan/40 hover:translate-y-[-4px] transition-all border border-transparent" onclick="selectTopup(this,'Diamond 56','MLBB',6000)">
-                    <div class="text-3xl mb-2">💎</div>
+                    <img src="assets/img/ml-icon.png" alt="Diamond" class="w-12 h-12 mx-auto mb-2 rounded-lg">
                     <div class="font-bold text-sm text-white">56 Diamond</div>
                     <div class="text-cyan font-display font-bold text-lg mt-1">Rp 6.000</div>
                 </div>
                 <div class="topup-card glass rounded-2xl p-4 text-center cursor-pointer hover:border-cyan/40 hover:translate-y-[-4px] transition-all border border-transparent" onclick="selectTopup(this,'Diamond 172','MLBB',16000)">
-                    <div class="text-3xl mb-2">💎</div>
+                    <img src="assets/img/ml-icon.png" alt="Diamond" class="w-12 h-12 mx-auto mb-2 rounded-lg">
                     <div class="font-bold text-sm text-white">172 Diamond</div>
                     <div class="text-cyan font-display font-bold text-lg mt-1">Rp 16.000</div>
                 </div>
                 <div class="topup-card glass rounded-2xl p-4 text-center cursor-pointer hover:border-cyan/40 hover:translate-y-[-4px] transition-all border border-transparent" onclick="selectTopup(this,'Diamond 344','MLBB',31000)">
-                    <div class="text-3xl mb-2">💎</div>
+                    <img src="assets/img/ml-icon.png" alt="Diamond" class="w-12 h-12 mx-auto mb-2 rounded-lg">
                     <div class="font-bold text-sm text-white">344 Diamond</div>
                     <div class="text-cyan font-display font-bold text-lg mt-1">Rp 31.000</div>
                 </div>
                 <div class="topup-card glass rounded-2xl p-4 text-center cursor-pointer hover:border-cyan/40 hover:translate-y-[-4px] transition-all border border-transparent" onclick="selectTopup(this,'Diamond 706','MLBB',62000)">
-                    <div class="text-3xl mb-2">💎</div>
+                    <img src="assets/img/ml-icon.png" alt="Diamond" class="w-12 h-12 mx-auto mb-2 rounded-lg">
                     <div class="font-bold text-sm text-white">706 Diamond</div>
                     <div class="text-cyan font-display font-bold text-lg mt-1">Rp 62.000</div>
                 </div>
                 <div class="topup-card glass rounded-2xl p-4 text-center cursor-pointer hover:border-cyan/40 hover:translate-y-[-4px] transition-all border border-transparent" onclick="selectTopup(this,'Diamond 1412','MLBB',121000)">
-                    <div class="text-3xl mb-2">💎</div>
+                    <img src="assets/img/ml-icon.png" alt="Diamond" class="w-12 h-12 mx-auto mb-2 rounded-lg">
                     <div class="font-bold text-sm text-white">1412 Diamond</div>
                     <div class="text-cyan font-display font-bold text-lg mt-1">Rp 121.000</div>
                 </div>
@@ -524,27 +524,27 @@
             <!-- Product Grid - PUBG -->
             <div id="topup-grid-pubg" class="topup-grid grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 hidden">
                 <div class="topup-card glass rounded-2xl p-4 text-center cursor-pointer hover:border-cyan/40 hover:translate-y-[-4px] transition-all border border-transparent" onclick="selectTopup(this,'UC 60','PUBG Mobile',16000)">
-                    <div class="text-3xl mb-2">🪙</div>
+                    <img src="assets/img/pubg-icon.png" alt="UC" class="w-12 h-12 mx-auto mb-2 rounded-lg">
                     <div class="font-bold text-sm text-white">60 UC</div>
                     <div class="text-cyan font-display font-bold text-lg mt-1">Rp 16.000</div>
                 </div>
                 <div class="topup-card glass rounded-2xl p-4 text-center cursor-pointer hover:border-cyan/40 hover:translate-y-[-4px] transition-all border border-transparent" onclick="selectTopup(this,'UC 325','PUBG Mobile',82000)">
-                    <div class="text-3xl mb-2">🪙</div>
+                    <img src="assets/img/pubg-icon.png" alt="UC" class="w-12 h-12 mx-auto mb-2 rounded-lg">
                     <div class="font-bold text-sm text-white">325 UC</div>
                     <div class="text-cyan font-display font-bold text-lg mt-1">Rp 82.000</div>
                 </div>
                 <div class="topup-card glass rounded-2xl p-4 text-center cursor-pointer hover:border-cyan/40 hover:translate-y-[-4px] transition-all border border-transparent" onclick="selectTopup(this,'UC 660','PUBG Mobile',157000)">
-                    <div class="text-3xl mb-2">🪙</div>
+                    <img src="assets/img/pubg-icon.png" alt="UC" class="w-12 h-12 mx-auto mb-2 rounded-lg">
                     <div class="font-bold text-sm text-white">660 UC</div>
                     <div class="text-cyan font-display font-bold text-lg mt-1">Rp 157.000</div>
                 </div>
                 <div class="topup-card glass rounded-2xl p-4 text-center cursor-pointer hover:border-cyan/40 hover:translate-y-[-4px] transition-all border border-transparent" onclick="selectTopup(this,'UC 1800','PUBG Mobile',420000)">
-                    <div class="text-3xl mb-2">🪙</div>
+                    <img src="assets/img/pubg-icon.png" alt="UC" class="w-12 h-12 mx-auto mb-2 rounded-lg">
                     <div class="font-bold text-sm text-white">1800 UC</div>
                     <div class="text-cyan font-display font-bold text-lg mt-1">Rp 420.000</div>
                 </div>
                 <div class="topup-card glass rounded-2xl p-4 text-center cursor-pointer hover:border-cyan/40 hover:translate-y-[-4px] transition-all border border-transparent" onclick="selectTopup(this,'UC 3850','PUBG Mobile',850000)">
-                    <div class="text-3xl mb-2">🪙</div>
+                    <img src="assets/img/pubg-icon.png" alt="UC" class="w-12 h-12 mx-auto mb-2 rounded-lg">
                     <div class="font-bold text-sm text-white">3850 UC</div>
                     <div class="text-cyan font-display font-bold text-lg mt-1">Rp 850.000</div>
                 </div>
@@ -553,27 +553,27 @@
             <!-- Product Grid - Free Fire -->
             <div id="topup-grid-ff" class="topup-grid grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 hidden">
                 <div class="topup-card glass rounded-2xl p-4 text-center cursor-pointer hover:border-cyan/40 hover:translate-y-[-4px] transition-all border border-transparent" onclick="selectTopup(this,'5 Diamond','Free Fire',1000)">
-                    <div class="text-3xl mb-2">🔥</div>
+                    <img src="assets/img/ff-icon.png" alt="5 Diamond" class="w-12 h-12 mx-auto mb-2 rounded-lg">
                     <div class="font-bold text-sm text-white">5 Diamond</div>
                     <div class="text-cyan font-display font-bold text-lg mt-1">Rp 1.000</div>
                 </div>
                 <div class="topup-card glass rounded-2xl p-4 text-center cursor-pointer hover:border-cyan/40 hover:translate-y-[-4px] transition-all border border-transparent" onclick="selectTopup(this,'70 Diamond','Free Fire',10000)">
-                    <div class="text-3xl mb-2">🔥</div>
+                    <img src="assets/img/ff-icon.png" alt="70 Diamond" class="w-12 h-12 mx-auto mb-2 rounded-lg">
                     <div class="font-bold text-sm text-white">70 Diamond</div>
                     <div class="text-cyan font-display font-bold text-lg mt-1">Rp 10.000</div>
                 </div>
                 <div class="topup-card glass rounded-2xl p-4 text-center cursor-pointer hover:border-cyan/40 hover:translate-y-[-4px] transition-all border border-transparent" onclick="selectTopup(this,'140 Diamond','Free Fire',20000)">
-                    <div class="text-3xl mb-2">🔥</div>
+                    <img src="assets/img/ff-icon.png" alt="140 Diamond" class="w-12 h-12 mx-auto mb-2 rounded-lg">
                     <div class="font-bold text-sm text-white">140 Diamond</div>
                     <div class="text-cyan font-display font-bold text-lg mt-1">Rp 20.000</div>
                 </div>
                 <div class="topup-card glass rounded-2xl p-4 text-center cursor-pointer hover:border-cyan/40 hover:translate-y-[-4px] transition-all border border-transparent" onclick="selectTopup(this,'355 Diamond','Free Fire',50000)">
-                    <div class="text-3xl mb-2">🔥</div>
+                    <img src="assets/img/ff-icon.png" alt="355 Diamond" class="w-12 h-12 mx-auto mb-2 rounded-lg">
                     <div class="font-bold text-sm text-white">355 Diamond</div>
                     <div class="text-cyan font-display font-bold text-lg mt-1">Rp 50.000</div>
                 </div>
                 <div class="topup-card glass rounded-2xl p-4 text-center cursor-pointer hover:border-cyan/40 hover:translate-y-[-4px] transition-all border border-transparent" onclick="selectTopup(this,'720 Diamond','Free Fire',100000)">
-                    <div class="text-3xl mb-2">🔥</div>
+                    <img src="assets/img/ff-icon.png" alt="720 Diamond" class="w-12 h-12 mx-auto mb-2 rounded-lg">
                     <div class="font-bold text-sm text-white">720 Diamond</div>
                     <div class="text-cyan font-display font-bold text-lg mt-1">Rp 100.000</div>
                 </div>
@@ -582,27 +582,27 @@
             <!-- Product Grid - Valorant -->
             <div id="topup-grid-valorant" class="topup-grid grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 hidden">
                 <div class="topup-card glass rounded-2xl p-4 text-center cursor-pointer hover:border-cyan/40 hover:translate-y-[-4px] transition-all border border-transparent" onclick="selectTopup(this,'475 VP','Valorant',47000)">
-                    <div class="text-3xl mb-2">🎯</div>
+                    <img src="assets/img/valorant-icon.png" alt="VP" class="w-12 h-12 mx-auto mb-2 rounded-lg">
                     <div class="font-bold text-sm text-white">475 VP</div>
                     <div class="text-cyan font-display font-bold text-lg mt-1">Rp 47.000</div>
                 </div>
                 <div class="topup-card glass rounded-2xl p-4 text-center cursor-pointer hover:border-cyan/40 hover:translate-y-[-4px] transition-all border border-transparent" onclick="selectTopup(this,'1000 VP','Valorant',95000)">
-                    <div class="text-3xl mb-2">🎯</div>
+                    <img src="assets/img/valorant-icon.png" alt="VP" class="w-12 h-12 mx-auto mb-2 rounded-lg">
                     <div class="font-bold text-sm text-white">1000 VP</div>
                     <div class="text-cyan font-display font-bold text-lg mt-1">Rp 95.000</div>
                 </div>
                 <div class="topup-card glass rounded-2xl p-4 text-center cursor-pointer hover:border-cyan/40 hover:translate-y-[-4px] transition-all border border-transparent" onclick="selectTopup(this,'2050 VP','Valorant',190000)">
-                    <div class="text-3xl mb-2">🎯</div>
+                    <img src="assets/img/valorant-icon.png" alt="VP" class="w-12 h-12 mx-auto mb-2 rounded-lg">
                     <div class="font-bold text-sm text-white">2050 VP</div>
                     <div class="text-cyan font-display font-bold text-lg mt-1">Rp 190.000</div>
                 </div>
                 <div class="topup-card glass rounded-2xl p-4 text-center cursor-pointer hover:border-cyan/40 hover:translate-y-[-4px] transition-all border border-transparent" onclick="selectTopup(this,'5350 VP','Valorant',470000)">
-                    <div class="text-3xl mb-2">🎯</div>
+                    <img src="assets/img/valorant-icon.png" alt="VP" class="w-12 h-12 mx-auto mb-2 rounded-lg">
                     <div class="font-bold text-sm text-white">5350 VP</div>
                     <div class="text-cyan font-display font-bold text-lg mt-1">Rp 470.000</div>
                 </div>
                 <div class="topup-card glass rounded-2xl p-4 text-center cursor-pointer hover:border-cyan/40 hover:translate-y-[-4px] transition-all border border-transparent" onclick="selectTopup(this,'11000 VP','Valorant',940000)">
-                    <div class="text-3xl mb-2">🎯</div>
+                    <img src="assets/img/valorant-icon.png" alt="VP" class="w-12 h-12 mx-auto mb-2 rounded-lg">
                     <div class="font-bold text-sm text-white">11000 VP</div>
                     <div class="text-cyan font-display font-bold text-lg mt-1">Rp 940.000</div>
                 </div>
@@ -611,27 +611,27 @@
             <!-- Product Grid - Genshin -->
             <div id="topup-grid-genshin" class="topup-grid grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 hidden">
                 <div class="topup-card glass rounded-2xl p-4 text-center cursor-pointer hover:border-cyan/40 hover:translate-y-[-4px] transition-all border border-transparent" onclick="selectTopup(this,'60 Genesis Crystal','Genshin Impact',16000)">
-                    <div class="text-3xl mb-2">⭐</div>
+                    <img src="assets/img/genshin-icon.png" alt="Crystal" class="w-12 h-12 mx-auto mb-2 rounded-lg">
                     <div class="font-bold text-sm text-white">60 Crystal</div>
                     <div class="text-cyan font-display font-bold text-lg mt-1">Rp 16.000</div>
                 </div>
                 <div class="topup-card glass rounded-2xl p-4 text-center cursor-pointer hover:border-cyan/40 hover:translate-y-[-4px] transition-all border border-transparent" onclick="selectTopup(this,'300 Genesis Crystal','Genshin Impact',75000)">
-                    <div class="text-3xl mb-2">⭐</div>
+                    <img src="assets/img/genshin-icon.png" alt="Crystal" class="w-12 h-12 mx-auto mb-2 rounded-lg">
                     <div class="font-bold text-sm text-white">300 Crystal</div>
                     <div class="text-cyan font-display font-bold text-lg mt-1">Rp 75.000</div>
                 </div>
                 <div class="topup-card glass rounded-2xl p-4 text-center cursor-pointer hover:border-cyan/40 hover:translate-y-[-4px] transition-all border border-transparent" onclick="selectTopup(this,'980 Genesis Crystal','Genshin Impact',230000)">
-                    <div class="text-3xl mb-2">⭐</div>
+                    <img src="assets/img/genshin-icon.png" alt="Crystal" class="w-12 h-12 mx-auto mb-2 rounded-lg">
                     <div class="font-bold text-sm text-white">980 Crystal</div>
                     <div class="text-cyan font-display font-bold text-lg mt-1">Rp 230.000</div>
                 </div>
                 <div class="topup-card glass rounded-2xl p-4 text-center cursor-pointer hover:border-cyan/40 hover:translate-y-[-4px] transition-all border border-transparent" onclick="selectTopup(this,'1980 Genesis Crystal','Genshin Impact',449000)">
-                    <div class="text-3xl mb-2">⭐</div>
+                    <img src="assets/img/genshin-icon.png" alt="Crystal" class="w-12 h-12 mx-auto mb-2 rounded-lg">
                     <div class="font-bold text-sm text-white">1980 Crystal</div>
                     <div class="text-cyan font-display font-bold text-lg mt-1">Rp 449.000</div>
                 </div>
                 <div class="topup-card glass rounded-2xl p-4 text-center cursor-pointer hover:border-cyan/40 hover:translate-y-[-4px] transition-all border border-transparent" onclick="selectTopup(this,'3280 Genesis Crystal','Genshin Impact',749000)">
-                    <div class="text-3xl mb-2">⭐</div>
+                    <img src="assets/img/genshin-icon.png" alt="Crystal" class="w-12 h-12 mx-auto mb-2 rounded-lg">
                     <div class="font-bold text-sm text-white">3280 Crystal</div>
                     <div class="text-cyan font-display font-bold text-lg mt-1">Rp 749.000</div>
                 </div>
