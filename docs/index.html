@@ -1197,15 +1197,6 @@
         }
 
 
-        // ===== TOPUP SEARCH =====
-        function searchTopup(query) {
-            const q = query.toLowerCase().trim();
-            document.querySelectorAll('.topup-card').forEach(card => {
-                const onclick = (card.getAttribute('onclick') || '').toLowerCase();
-                card.style.display = onclick.includes(q) ? '' : 'none';
-            });
-        }
-
         function selectTopup(el, name, game, price) {
             document.querySelectorAll('.topup-card').forEach(c => {
                 c.classList.remove('glass-cyan');
@@ -1347,16 +1338,7 @@
             }, 8000);
         }
 
-        // ===== ORDER STATUS INPUT ENTER =====
-        const statusInput = document.getElementById('status-input');
-        if (statusInput) {
-            statusInput.addEventListener('keypress', (e) => {
-                if (e.key === 'Enter') {
-                    e.preventDefault();
-                    checkOrderStatus();
-                }
-            });
-        }
+        // Order status removed — now WhatsApp redirect
 
         // ===== MINI CART (KERANJANG) =====
         let cart = JSON.parse(localStorage.getItem('bangmx_cart') || '[]');
@@ -1367,7 +1349,7 @@
             } else {
                 cart.push({ name, game, price, qty: 1 });
             }
-            updateCartDisplay();
+            saveCart();
             showToast(`🛒 Ditambahkan: ${name} (${game})`, 'success');
         }
         function removeFromCart(index) {
@@ -1391,9 +1373,11 @@
                 showToast('Keranjang kosong!', 'error');
                 return;
             }
+            const userId = document.getElementById('topup-userid')?.value?.trim() || '-';
+            const server = document.getElementById('topup-server')?.value?.trim() || '-';
             const lines = cart.map(i => `- ${i.name} (${i.game}) x${i.qty}: Rp ${(i.price * i.qty).toLocaleString('id-ID')}`);
             const total = cart.reduce((s, i) => s + (i.price * i.qty), 0);
-            const msg = encodeURIComponent('Halo, saya ingin order:\n\n' + lines.join('\n') + '\n\nTotal: Rp ' + total.toLocaleString('id-ID') + '\n\nTerima kasih!');
+            const msg = encodeURIComponent('Halo, saya ingin order:\n\n' + lines.join('\n') + `\n👤 ID/UID: ${userId}\n🌐 Server: ${server}\n\nTotal: Rp ` + total.toLocaleString('id-ID') + '\n\nTerima kasih!');
             window.open('https://wa.me/6281213158851?text=' + msg, '_blank');
             cart = [];
             saveCart();
