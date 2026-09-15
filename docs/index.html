@@ -281,9 +281,9 @@
 <body class="bg-grid">
 
     <!-- ===== NAVBAR ===== -->
-    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 glass py-3 px-4 sm:px-6">
-        <div class="max-w-7xl mx-auto flex items-center justify-between">
-            <a href="#" class="flex items-center gap-3 group">
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-500">
+        <div class="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8">
+            <a href="#home" class="flex items-center gap-3 group">
                 <div class="relative w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan via-emerald to-purple-500 p-[2px] shadow-lg shadow-cyan/20 group-hover:shadow-cyan/40 transition-all duration-300">
                     <div class="w-full h-full bg-dark-900/90 rounded-[10px] flex items-center justify-center backdrop-blur-sm">
                         <svg class="w-5 h-5 text-cyan group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -295,33 +295,47 @@
                     BANGMX<span class="bg-gradient-to-r from-cyan via-emerald to-purple-400 bg-clip-text text-transparent">STORE</span>
                 </span>
             </a>
-            <div class="hidden md:flex items-center gap-6">
-                <a href="#home" class="text-sm hover:text-cyan transition-colors">Beranda</a>
-                <a href="#calculator" class="text-sm hover:text-cyan transition-colors">Kalkulator</a>
-                <a href="#topup" class="text-sm hover:text-cyan transition-colors">Topup</a>
-                <a href="#services" class="text-sm hover:text-cyan transition-colors">Layanan</a>
-                <a href="#faq" class="text-sm hover:text-cyan transition-colors">FAQ</a>
-                <a href="https://wa.me/6281213158851?text=Halo,%20saya%20ingin%20order%20joki!" target="_blank" class="btn-cta-pulse bg-gradient-to-r from-cyan to-emerald text-dark-900 font-bold text-sm px-5 py-2 rounded-lg">
+            <!-- Desktop Nav -->
+            <div class="hidden md:flex items-center gap-1">
+                <a href="#home" class="nav-link relative px-4 py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors">Beranda <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan to-emerald transition-all duration-300 group-hover:w-full"></span></a>
+                <a href="#calculator" class="nav-link relative px-4 py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors">Kalkulator <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan to-emerald transition-all duration-300 group-hover:w-full"></span></a>
+                <a href="#topup" class="nav-link relative px-4 py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors">Topup <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan to-emerald transition-all duration-300 group-hover:w-full"></span></a>
+                <a href="#services" class="nav-link relative px-4 py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors">Layanan <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan to-emerald transition-all duration-300 group-hover:w-full"></span></a>
+                <a href="#faq" class="nav-link relative px-4 py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors">FAQ <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan to-emerald transition-all duration-300 group-hover:w-full"></span></a>
+            </div>
+            <div class="flex items-center gap-3">
+                <a href="https://wa.me/6281213158851?text=Halo,%20saya%20ingin%20order%20joki!" target="_blank" class="hidden sm:inline-flex items-center gap-2 bg-gradient-to-r from-cyan to-emerald text-dark-900 font-bold text-sm px-5 py-2.5 rounded-xl hover:scale-105 transition-all duration-300 shadow-lg shadow-cyan/20">
                     Order Sekarang →
                 </a>
+                <button id="mobile-toggle" class="md:hidden text-white p-2 rounded-lg hover:bg-white/5 transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
             </div>
-            <button id="mobile-toggle" class="md:hidden text-2xl text-white">☰</button>
         </div>
     </nav>
 
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 w-64 h-full bg-dark-800 z-50 p-6 flex flex-col gap-4 md:hidden">
-        <button id="mobile-close" class="self-end text-2xl text-white mb-4">✕</button>
-        <a href="#home" class="text-lg hover:text-cyan transition-colors mobile-link">Beranda</a>
-        <a href="#calculator" class="text-lg hover:text-cyan transition-colors mobile-link">Kalkulator</a>
-        <a href="#topup" class="text-lg hover:text-cyan transition-colors mobile-link">Topup</a>
-        <a href="#services" class="text-lg hover:text-cyan transition-colors mobile-link">Layanan</a>
-        <a href="#faq" class="text-lg hover:text-cyan transition-colors mobile-link">FAQ</a>
-        <a href="https://wa.me/6281213158851?text=Halo,%20saya%20ingin%20order%20joki!" target="_blank" class="mt-4 bg-gradient-to-r from-cyan to-emerald text-dark-900 font-bold text-center px-5 py-3 rounded-lg">
-            Order Sekarang →
-        </a>
+    <!-- Mobile Menu Drawer -->
+    <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 w-72 h-full bg-dark-900/95 backdrop-blur-xl z-50 p-6 flex flex-col gap-2 transform translate-x-full transition-transform duration-500 md:hidden">
+        <div class="flex items-center justify-between mb-6">
+            <span class="font-display font-bold text-white text-lg">Menu</span>
+            <button id="mobile-close" class="text-gray-400 hover:text-white p-2 rounded-lg hover:bg-white/5 transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+        </div>
+        <a href="#home" class="mobile-link block px-4 py-3 rounded-xl text-gray-300 hover:text-white hover:bg-white/5 transition-all">Beranda</a>
+        <a href="#calculator" class="mobile-link block px-4 py-3 rounded-xl text-gray-300 hover:text-white hover:bg-white/5 transition-all">Kalkulator</a>
+        <a href="#topup" class="mobile-link block px-4 py-3 rounded-xl text-gray-300 hover:text-white hover:bg-white/5 transition-all">Topup</a>
+        <a href="#services" class="mobile-link block px-4 py-3 rounded-xl text-gray-300 hover:text-white hover:bg-white/5 transition-all">Layanan</a>
+        <a href="#faq" class="mobile-link block px-4 py-3 rounded-xl text-gray-300 hover:text-white hover:bg-white/5 transition-all">FAQ</a>
+        <div class="mt-auto">
+            <a href="https://wa.me/6281213158851?text=Halo,%20saya%20ingin%20order%20joki!" target="_blank" class="block text-center bg-gradient-to-r from-cyan to-emerald text-dark-900 font-bold px-5 py-3 rounded-xl hover:scale-[1.02] transition-all">Order via WhatsApp →</a>
+        </div>
     </div>
-    <div id="mobile-overlay" class="fixed inset-0 bg-black/50 z-40 hidden"></div>
+    <div id="mobile-overlay" class="fixed inset-0 bg-black/60 z-40 hidden backdrop-blur-sm"></div>
+    <!-- Back to Top -->
+    <button id="back-to-top" class="fixed bottom-6 right-6 z-40 w-12 h-12 rounded-full bg-gradient-to-tr from-cyan to-emerald text-dark-900 flex items-center justify-center shadow-lg shadow-cyan/30 opacity-0 translate-y-4 transition-all duration-300 hover:scale-110 md:hidden" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg>
+    </button>
 
     <!-- ===== HERO SECTION ===== -->
     <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
@@ -1254,6 +1268,69 @@
             showToast(`🔔 ${game} | ${name} dibeli User 0812***${id}`, 'success');
         }
         setInterval(showPurchaseFeed, 30000); // Every 30 seconds
+
+        // ===== NAVBAR SCROLL EFFECT =====
+        const navbar = document.getElementById('navbar');
+        let lastScrollY = 0;
+        let scrollTimeout;
+        window.addEventListener('scroll', () => {
+            const currentScrollY = window.scrollY;
+            if (currentScrollY > 50) {
+                navbar.classList.add('glass', 'shadow-lg', 'shadow-black/20');
+                navbar.style.borderBottom = '1px solid rgba(255,255,255,0.05)';
+            } else {
+                navbar.classList.remove('glass', 'shadow-lg', 'shadow-black/20');
+                navbar.style.borderBottom = 'none';
+            }
+            // Back to top button
+            const btt = document.getElementById('back-to-top');
+            if (btt) {
+                if (currentScrollY > 400) {
+                    btt.classList.remove('opacity-0', 'translate-y-4');
+                    btt.classList.add('opacity-100', 'translate-y-0');
+                } else {
+                    btt.classList.add('opacity-0', 'translate-y-4');
+                    btt.classList.remove('opacity-100', 'translate-y-0');
+                }
+            }
+            lastScrollY = currentScrollY;
+        });
+
+        // ===== MOBILE MENU TOGGLE =====
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileClose = document.getElementById('mobile-close');
+        const mobileOverlay = document.getElementById('mobile-overlay');
+
+        function openMobileMenu() {
+            mobileMenu.classList.remove('translate-x-full');
+            mobileMenu.classList.add('translate-x-0');
+            mobileOverlay.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeMobileMenu() {
+            mobileMenu.classList.add('translate-x-full');
+            mobileMenu.classList.remove('translate-x-0');
+            mobileOverlay.classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+
+        if (mobileToggle) mobileToggle.addEventListener('click', openMobileMenu);
+        if (mobileClose) mobileClose.addEventListener('click', closeMobileMenu);
+        if (mobileOverlay) mobileOverlay.addEventListener('click', closeMobileMenu);
+
+        // Close mobile menu on link click
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+
+        // ===== BACK TO TOP =====
+        const backToTop = document.getElementById('back-to-top');
+        if (backToTop) {
+            backToTop.addEventListener('click', () => {
+                window.scrollTo({top: 0, behavior: 'smooth'});
+            });
+        }
 
         // ===== INIT =====
         document.addEventListener('DOMContentLoaded', () => {
