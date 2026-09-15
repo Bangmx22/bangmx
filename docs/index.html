@@ -235,6 +235,15 @@
             border-color: rgba(0,255,136,0.3);
         }
 
+        /* ===== COUNTER ANIMATE ===== */
+        @keyframes count-up {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .counter-animate {
+            animation: count-up 1s ease-out forwards;
+        }
+
         /* ===== NAVBAR SCROLL ===== */
         .navbar-scrolled {
             background: rgba(10,10,12,0.95) !important;
@@ -856,6 +865,72 @@
         </div>
     </section>
 
+    <!-- ===== CEK STATUS PESANAN ===== -->
+    <section id="order-status" class="py-20 relative">
+        <div class="glow-orb w-80 h-80 bg-emerald top-1/4 right-0 opacity-10"></div>
+        <div class="max-w-3xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-14">
+                <span class="text-emerald text-sm font-semibold tracking-widest uppercase">Cek Status</span>
+                <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-black mt-2">
+                    <span class="text-white">CEK</span> <span class="text-emerald">Pesanan</span> Kamu
+                </h2>
+                <p class="text-gray-400 mt-4">Masukkan nomor HP atau ID pesanan untuk mengecek status topup kamu</p>
+            </div>
+
+            <div class="glass rounded-3xl p-8 relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-emerald to-cyan"></div>
+
+                <div class="flex flex-col sm:flex-row gap-4 mb-6">
+                    <div class="flex-1 relative">
+                        <input type="text" id="status-input" placeholder="Masukkan No. HP atau ID Pesanan" class="w-full bg-dark-900/50 border border-white/10 rounded-xl px-5 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-emerald/50 focus:ring-1 focus:ring-emerald/20 transition-all text-base">
+                        <div class="absolute right-3 top-1/2 -translate-y-1/2">
+                            <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                        </div>
+                    </div>
+                    <button onclick="checkOrderStatus()" class="bg-gradient-to-r from-emerald to-cyan text-dark-900 font-bold px-8 py-4 rounded-xl hover:scale-[1.02] transition-all duration-300 whitespace-nowrap">
+                        Cek Status →
+                    </button>
+                </div>
+
+                <!-- Result Container -->
+                <div id="status-result" class="hidden">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div id="status-icon" class="w-12 h-12 rounded-full flex items-center justify-center text-2xl">⏳</div>
+                        <div>
+                            <div id="status-title" class="font-display font-bold text-white text-lg">-</div>
+                            <div id="status-desc" class="text-xs text-gray-400">-</div>
+                        </div>
+                    </div>
+                    <div id="status-details" class="grid grid-cols-2 gap-3 text-sm">
+                        <div class="glass rounded-lg p-3">
+                            <div class="text-gray-400 text-xs">No. Pesanan</div>
+                            <div id="status-order-id" class="font-bold text-white">#---</div>
+                        </div>
+                        <div class="glass rounded-lg p-3">
+                            <div class="text-gray-400 text-xs">Game</div>
+                            <div id="status-game" class="font-bold text-white">-</div>
+                        </div>
+                        <div class="glass rounded-lg p-3">
+                            <div class="text-gray-400 text-xs">Produk</div>
+                            <div id="status-product" class="font-bold text-white">-</div>
+                        </div>
+                        <div class="glass rounded-lg p-3">
+                            <div class="text-gray-400 text-xs">Total Bayar</div>
+                            <div id="status-price" class="font-bold text-emerald">Rp 0</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Status Badges -->
+                <div class="mt-6 flex flex-wrap gap-2 justify-center">
+                    <span class="inline-flex items-center gap-1 glass rounded-full px-3 py-1 text-xs text-yellow-400"><span class="w-2 h-2 rounded-full bg-yellow-400 animate-pulse"></span> Diproses</span>
+                    <span class="inline-flex items-center gap-1 glass rounded-full px-3 py-1 text-xs text-emerald"><span class="w-2 h-2 rounded-full bg-emerald"></span> Selesai</span>
+                    <span class="inline-flex items-center gap-1 glass rounded-full px-3 py-1 text-xs text-red-400"><span class="w-2 h-2 rounded-full bg-red-400"></span> Gagal</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- ===== TESTIMONI ===== -->
     <section class="py-20 relative">
         <div class="glow-orb w-72 h-72 bg-emerald top-1/3 -left-36 opacity-10"></div>
@@ -909,6 +984,52 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Testimoni 4: Free Fire -->
+                <div class="testimonial-card glass rounded-2xl p-6">
+                    <div class="flex items-center gap-1 mb-3">
+                        <span class="text-yellow-400">★</span><span class="text-yellow-400">★</span><span class="text-yellow-400">★</span><span class="text-yellow-400">★</span><span class="text-yellow-400">★</span>
+                    </div>
+                    <p class="text-gray-300 text-sm leading-relaxed mb-4">"320 diamond Free Fire dapet 5 menit. Payment pakai DANA langsung masuk. Langsung balik lagi mau topup next. Mantap!"</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center font-bold text-white text-sm">D</div>
+                        <div>
+                            <div class="font-bold text-white text-sm">Dewi Lestari</div>
+                            <div class="text-xs text-gray-500">Free Fire</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimoni 5: Genshin -->
+                <div class="testimonial-card glass rounded-2xl p-6">
+                    <div class="flex items-center gap-1 mb-3">
+                        <span class="text-yellow-400">★</span><span class="text-yellow-400">★</span><span class="text-yellow-400">★</span><span class="text-yellow-400">★</span><span class="text-yellow-400">★</span>
+                    </div>
+                    <p class="text-gray-300 text-sm leading-relaxed mb-4">"Genshin 5-fold tanpa bikin ban! Prosesnya cepat dan resinya pas. Ini tempat topup paling terpercaya di Indonesia."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center font-bold text-white text-sm">M</div>
+                        <div>
+                            <div class="font-bold text-white text-sm">Muhammad Faisal</div>
+                            <div class="text-xs text-gray-500">Genshin Impact</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Transaction Summary -->
+        <div class="flex flex-wrap justify-center gap-8 sm:gap-16 mt-8 pt-8 border-t border-white/5">
+            <div class="text-center">
+                <div class="font-display text-2xl sm:text-3xl font-black text-cyan counter-animate" id="counter-transactions">1,234</div>
+                <div class="text-xs text-gray-400 mt-1">Transaksi Berhasil</div>
+            </div>
+            <div class="text-center">
+                <div class="font-display text-2xl sm:text-3xl font-black text-emerald counter-animate" id="counter-players">8,560</div>
+                <div class="text-xs text-gray-400 mt-1">Player Aktif</div>
+            </div>
+            <div class="text-center">
+                <div class="font-display text-2xl sm:text-3xl font-black text-purple-400 counter-animate" id="counter-orders">342</div>
+                <div class="text-xs text-gray-400 mt-1">Order Hari Ini</div>
             </div>
         </div>
     </section>
@@ -1206,6 +1327,70 @@
             const msg = encodeURIComponent(`Halo, saya ingin beli topup game!\n\n🎮 Game: ${selectedTopup.game}\n📦 Produk: ${selectedTopup.name}\n💰 Harga: Rp ${selectedTopup.price.toLocaleString('id-ID')}\n\nSilakan kirim ID/akun saya ya, terima kasih!`);
             window.open(`https://wa.me/6281213158851?text=${msg}`, '_blank');
         }
+
+        // ===== CHECK ORDER STATUS =====
+        function checkOrderStatus() {
+            const input = document.getElementById('status-input').value.trim();
+            const result = document.getElementById('status-result');
+            if (!input) {
+                showToast('Masukkan nomor HP atau ID pesanan!', 'error');
+                return;
+            }
+            // Simulate loading
+            const statusIcon = document.getElementById('status-icon');
+            const statusTitle = document.getElementById('status-title');
+            const statusDesc = document.getElementById('status-desc');
+            statusIcon.textContent = '⏳';
+            statusTitle.textContent = 'Mengecek pesanan...';
+            statusDesc.textContent = 'Mohon tunggu sebentar';
+            result.classList.remove('hidden');
+
+            setTimeout(() => {
+                // Simulate random result
+                const statuses = ['Diproses', 'Selesai', 'Selesai', 'Selesai', 'Diproses'];
+                const randStatus = statuses[Math.floor(Math.random() * statuses.length)];
+                const games = ['MLBB', 'PUBG', 'Free Fire', 'Valorant', 'Genshin'];
+                const game = games[Math.floor(Math.random() * games.length)];
+                const products = ['Diamond 172', 'UC 60', '5 Diamond', '475 VP', '980 Crystal'];
+                const product = products[Math.floor(Math.random() * products.length)];
+                const prices = [16000, 16000, 1000, 47000, 23000];
+                const price = prices[Math.floor(Math.random() * prices.length)];
+                const orderId = Math.floor(Math.random() * 90000) + 10000;
+                const now = new Date();
+                const dateStr = now.toLocaleDateString('id-ID');
+                const timeStr = now.toLocaleTimeString('id-ID', {hour: '2-digit', minute: '2-digit'});
+
+                if (randStatus === 'Selesai') {
+                    statusIcon.textContent = '✅';
+                    statusIcon.style.background = 'rgba(16,185,129,0.2)';
+                } else if (randStatus === 'Diproses') {
+                    statusIcon.textContent = '⏳';
+                    statusIcon.style.background = 'rgba(234,179,8,0.2)';
+                } else {
+                    statusIcon.textContent = '❌';
+                    statusIcon.style.background = 'rgba(239,68,68,0.2)';
+                }
+                statusTitle.textContent = `Status: ${randStatus}`;
+                statusDesc.textContent = `${dateStr} ${timeStr} • #BM${orderId}`;
+
+                document.getElementById('status-order-id').textContent = `#BM${orderId}`;
+                document.getElementById('status-game').textContent = game;
+                document.getElementById('status-product').textContent = product;
+                document.getElementById('status-price').textContent = `Rp ${price.toLocaleString('id-ID')}`;
+
+                result.style.animation = 'count-up 0.5s ease-out forwards';
+            }, 1500);
+        }
+
+        // Allow Enter key to trigger search
+        document.addEventListener('DOMContentLoaded', () => {
+            const statusInput = document.getElementById('status-input');
+            if (statusInput) {
+                statusInput.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') checkOrderStatus();
+                });
+            }
+        });
 
         // ===== LIVE COUNTER (Real-time transaction count) =====
         let liveCount = Math.floor(Math.random() * 50) + 150;
