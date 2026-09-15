@@ -1011,12 +1011,6 @@
         let selectedService = null;
         let currentTier = 3;
 
-        // ===== NAVBAR SCROLL =====
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            navbar.classList.toggle('navbar-scrolled', window.scrollY > 50);
-        });
-
         // ===== GAME SELECTION =====
         document.querySelectorAll('.game-btn').forEach(btn => {
             btn.addEventListener('click', () => {
