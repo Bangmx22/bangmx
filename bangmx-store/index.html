@@ -463,6 +463,14 @@
                 <button class="topup-tab glass px-5 py-2.5 rounded-xl text-sm font-bold text-gray-400 hover:text-white transition-colors" data-tab="roblox" onclick="switchTopupTab('roblox')"><img src="assets/img/roblox-icon.png" alt="RBX" class="w-5 h-5 inline rounded"> Roblox</button>
             </div>
 
+            
+            <!-- Search Bar -->
+            <div class="max-w-md mx-auto mb-6">
+                <div class="glass rounded-xl flex items-center gap-3 px-4 py-3">
+                    <svg class="w-5 h-5 text-gray-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                    <input id="topup-search" type="text" placeholder="Cari game atau produk..." class="bg-transparent outline-none text-white text-sm flex-1 placeholder-gray-500" oninput="searchTopup(this.value)">
+                </div>
+            </div>
             <!-- Product Grid - Mobile Legends -->
             <div id="topup-grid-ml" class="topup-grid grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
                 <div class="topup-card glass rounded-2xl p-4 text-center cursor-pointer hover:border-cyan/40 hover:translate-y-[-4px] transition-all border border-transparent" onclick="selectTopup(this,'Diamond 56','MLBB',6000)">
@@ -689,6 +697,16 @@
                 <div class="flex items-center justify-center gap-3 mb-3">
                     <span class="text-gray-400 text-sm">Harga:</span>
                     <span id="topup-selected-price" class="font-display text-2xl font-black text-emerald">Rp 0</span>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-3 text-left">
+                    <div>
+                        <label class="block text-xs text-gray-400 mb-1">ID / UID Game <span class="text-red-400">*</span></label>
+                        <input id="topup-userid" type="text" placeholder="Contoh: 123456789" class="w-full bg-dark-800 border border-white/10 rounded-lg px-3 py-2 text-white text-sm outline-none focus:border-cyan/50 transition-colors">
+                    </div>
+                    <div>
+                        <label class="block text-xs text-gray-400 mb-1">Server / Zone <span class="text-gray-600">(opsional)</span></label>
+                        <input id="topup-server" type="text" placeholder="Contoh: 2146" class="w-full bg-dark-800 border border-white/10 rounded-lg px-3 py-2 text-white text-sm outline-none focus:border-cyan/50 transition-colors">
+                    </div>
                 </div>
                 <button onclick="orderTopup()" class="w-full sm:w-auto bg-gradient-to-r from-cyan to-emerald text-dark-900 font-bold py-3 px-8 rounded-xl text-base hover:scale-[1.02] transition-transform">
                     🚀 Beli via WhatsApp
@@ -1102,74 +1120,9 @@
     <div id="toast-container" class="fixed bottom-24 right-4 z-[9999] flex flex-col gap-2"></div>
 
     <script>
-        // ===== DATA =====
-
-        const tierNames = ['Bronze V', 'Silver V', 'Gold V', 'Platinum V', 'Diamond V', 'Master', 'Epic', 'Legend', 'Mythic', 'Apex'];
-        const tierStartNames = ['Bronze V', 'Silver IV', 'Gold III', 'Platinum II', 'Diamond I', 'Master', 'Epic', 'Legend', 'Mythic', 'Apex'];
+        // Calculator code removed
 
         // ===== STATE =====
-        let selectedGame = null;
-        let selectedService = null;
-        let currentTier = 3;
-
-        // ===== GAME SELECTION =====
-        document.querySelectorAll('.game-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                document.querySelectorAll('.game-btn').forEach(b => {
-                    b.classList.remove('glass-cyan');
-                    b.classList.add('glass');
-                });
-                btn.classList.remove('glass');
-                btn.classList.add('glass-cyan');
-                selectedGame = btn.dataset.game;
-                updatePrice();
-                updateStepIndicator(1);
-            });
-        });
-
-        // ===== SERVICE SELECTION =====
-        document.querySelectorAll('.service-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                document.querySelectorAll('.service-btn').forEach(b => {
-                    b.classList.remove('glass-emerald');
-                    b.classList.add('glass');
-                });
-                btn.classList.remove('glass');
-                btn.classList.add('glass-emerald');
-                selectedService = btn.dataset.service;
-                updatePrice();
-                updateStepIndicator(2);
-            });
-        });
-
-        // ===== TIER SLIDER =====
-        // ===== PRICE CALCULATION =====
-        function updatePrice() {
-            if (!selectedGame || !selectedService) return;
-            const game = gameData[selectedGame];
-            const multiplier = parseFloat(document.querySelector(`[data-service="${selectedService}"]`)?.dataset.multiplier || 1);
-            const basePrice = game.prices[selectedService];
-            const tierBonus = (currentTier - 1) * 5000;
-            const total = Math.round(basePrice * multiplier + tierBonus);
-
-            const priceEl = document.getElementById('total-price');
-            priceEl.classList.remove('counter-animate');
-            void priceEl.offsetWidth; // trigger reflow
-            priceEl.classList.add('counter-animate');
-            priceEl.textContent = `Rp ${total.toLocaleString('id-ID')}`;
-        }
-
-        // ===== STEP INDICATOR =====
-        function updateStepIndicator(step) {
-            document.querySelectorAll('.step-indicator').forEach((el, i) => {
-                if (i < step) {
-                    el.className = 'step-indicator w-8 h-8 rounded-full bg-cyan/20 border border-cyan flex items-center justify-center text-cyan text-sm font-bold';
-                } else {
-                    el.className = 'step-indicator w-8 h-8 rounded-full bg-gray-700 border border-gray-600 flex items-center justify-center text-gray-400 text-sm font-bold';
-                }
-            });
-        }
-
         // ===== ACCORDION =====
         function toggleAccordion(btn) {
             const content = btn.nextElementSibling;
@@ -1250,6 +1203,16 @@
             document.getElementById('topup-order-bar')?.classList.add('hidden');
         }
 
+
+        // ===== TOPUP SEARCH =====
+        function searchTopup(query) {
+            const q = query.toLowerCase().trim();
+            document.querySelectorAll('.topup-card').forEach(card => {
+                const onclick = (card.getAttribute('onclick') || '').toLowerCase();
+                card.style.display = onclick.includes(q) ? '' : 'none';
+            });
+        }
+
         function selectTopup(el, name, game, price) {
             document.querySelectorAll('.topup-card').forEach(c => {
                 c.classList.remove('glass-cyan');
@@ -1271,7 +1234,9 @@
                 showToast('Pilih produk topup terlebih dahulu!', 'error');
                 return;
             }
-            const msg = encodeURIComponent(`Halo, saya ingin beli topup game!\n\n🎮 Game: ${selectedTopup.game}\n📦 Produk: ${selectedTopup.name}\n💰 Harga: Rp ${selectedTopup.price.toLocaleString('id-ID')}\n\nSilakan kirim ID/akun saya ya, terima kasih!`);
+            const userId = document.getElementById('topup-userid')?.value?.trim() || '-';
+            const server = document.getElementById('topup-server')?.value?.trim() || '-';
+            const msg = encodeURIComponent(`Halo, saya ingin beli topup game!\n\n🎮 Game: ${selectedTopup.game}\n📦 Produk: ${selectedTopup.name}\n💰 Harga: Rp ${selectedTopup.price.toLocaleString('id-ID')}\n👤 ID/UID: ${userId}\n🌐 Server: ${server}\n\nTunggu konfirmasi ya, terima kasih!`);
             window.open(`https://wa.me/6281213158851?text=${msg}`, '_blank');
         }
 
