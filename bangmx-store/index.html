@@ -1017,21 +1017,6 @@
             navbar.classList.toggle('navbar-scrolled', window.scrollY > 50);
         });
 
-        // ===== MOBILE MENU =====
-        const mobileMenu = document.getElementById('mobile-menu');
-        const mobileOverlay = document.getElementById('mobile-overlay');
-        document.getElementById('mobile-toggle').addEventListener('click', () => {
-            mobileMenu.classList.add('open');
-            mobileOverlay.classList.remove('hidden');
-        });
-        document.getElementById('mobile-close').addEventListener('click', closeMobileMenu);
-        mobileOverlay.addEventListener('click', closeMobileMenu);
-        document.querySelectorAll('.mobile-link').forEach(l => l.addEventListener('click', closeMobileMenu));
-        function closeMobileMenu() {
-            mobileMenu.classList.remove('open');
-            mobileOverlay.classList.add('hidden');
-        }
-
         // ===== GAME SELECTION =====
         document.querySelectorAll('.game-btn').forEach(btn => {
             btn.addEventListener('click', () => {
