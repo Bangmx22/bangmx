@@ -1303,14 +1303,12 @@
         const mobileOverlay = document.getElementById('mobile-overlay');
 
         function openMobileMenu() {
-            mobileMenu.classList.remove('translate-x-full');
-            mobileMenu.classList.add('translate-x-0');
+            mobileMenu.classList.add('open');
             mobileOverlay.classList.remove('hidden');
             document.body.style.overflow = 'hidden';
         }
         function closeMobileMenu() {
-            mobileMenu.classList.add('translate-x-full');
-            mobileMenu.classList.remove('translate-x-0');
+            mobileMenu.classList.remove('open');
             mobileOverlay.classList.add('hidden');
             document.body.style.overflow = '';
         }
