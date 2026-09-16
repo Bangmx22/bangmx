@@ -367,3 +367,26 @@ a { text-decoration: none; color: inherit; }
     .admin-stats { grid-template-columns: repeat(2, 1fr); }
     #toast-container { right: 10px; left: 10px; max-width: none; }
 }
+
+/* ===== WHATSAPP WIDGET RESPONSIVE ===== */
+#whatsapp-widget {
+    pointer-events: auto;
+    cursor: pointer;
+    z-index: 50;
+}
+#whatsapp-popup {
+    pointer-events: auto;
+    cursor: pointer;
+}
+#whatsapp-close {
+    pointer-events: auto;
+    cursor: pointer;
+}
+.mobile-menu {
+    pointer-events: auto;
+    cursor: pointer;
+}
+.mobile-link {
+    pointer-events: auto;
+    cursor: pointer;
+}
